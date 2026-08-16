@@ -1,66 +1,75 @@
-# Furniro - E-Commerce Blog Page
+# Furniro - E-Commerce Website (9 Pages)
 
-A responsive, pixel-perfect recreate of the **Furniro E-Commerce Blog Page** based on the official Figma design. Built using clean, semantic **HTML5**, modern **CSS3**, and lightweight **Vanilla JavaScript**.
+A complete, pixel-perfect recreate of the **Furniro E-Commerce Website** based on the official Figma design. Built using clean, semantic **HTML5**, modern **CSS3**, and lightweight **Vanilla JavaScript**.
 
 ---
 
 ## 📌 Project Overview
 
-This project is a clean and exact implementation of the Furniro Blog Page template. It features a main blog feed with detailed post previews, a dynamic sidebar (with live title search, category counts, and recent post thumbnails), pagination controls, a value proposition features bar, and a global header and footer consistent with the entire Furniro website ecosystem.
+This repository contains the complete frontend codebase for the Furniro E-Commerce platform consisting of 9 main HTML pages and modular components like the Slide-out Cart Drawer.
+
+---
+
+## 📄 Pages & Structure
+
+1. **Home Page** (`index.html`) - Main landing page with hero slider, featured categories, products grid, and inspirational layouts.
+2. **Shop Page** (`shop.html`, `shop.css`, `shop.js`) - Product catalog grid with filter/sorting options and pagination.
+3. **Product Detail Page** (`product-detail.html`, `product-detail.css`, `product-detail.js`) - Detailed view of individual items with gallery, size/color selectors, and description tabs.
+4. **Product Comparison Page** (`comparison.html`, `comparison.css`, `comparison.js`) - Feature-by-feature comparison matrix for selected furniture items.
+5. **Blog Page** (`blog.html`, `blog.js`, `style.css`) - Blog listing featuring live title search, categories list, and recent post widgets.
+6. **Cart Page** (`cart.html`, `cart.css`, `cart.js`) - Full shopping cart view showing itemized totals, quantities, and checkout navigation.
+7. **Checkout Page** (`checkout.html`, `checkout.css`, `checkout.js`) - Billing details form, order summary, and payment gateway selection UI.
+8. **Contact Page** (`contact.html`, `contact.css`, `contact.js`) - Contact form with interactive form validation, location info, and standard feature indicators.
+9. **Cart Drawer Component** (`cart-drawer.html`, `cart-drawer.css`, `cart-drawer.js`) - Reusable slide-out mini-cart modal interface.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **HTML5**: Semantic markup (`<header>`, `<nav>`, `<main>`, `<article>`, `<aside>`, `<footer>`) for accessibility and structure.
-- **CSS3**: Flexbox, Grid layout, CSS custom variables, and media queries for full responsiveness across all screen sizes.
-- **Vanilla JavaScript**: Lightweight DOM manipulation for interactive features (search filter, mobile navigation, pagination toggle, and form validation).
-- **FontAwesome**: Iconography for header navigation, post metadata, and feature highlights.
+- **HTML5**: Semantic markup (`<header>`, `<nav>`, `<main>`, `<article>`, `<aside>`, `<footer>`) for web standards and accessibility.
+- **CSS3**: BEM methodology, Flexbox, CSS Grid, custom properties, and multi-device media queries.
+- **Vanilla JavaScript**: Modular DOM interaction, slide-out menu control, form validation, and client-side filtering without heavy dependencies.
+- **FontAwesome**: Iconography for UI actions, star ratings, social links, and navigation headers.
 
 ---
 
-## ✨ Features & Functionality
-
-### 1. Navigation Header
-- **Desktop Layout**: Furniro logo mark, navigation links (`Home`, `Shop`, `About`, `Contact`), and utility icons.
-- **Mobile Drawer**: Responsive hamburger menu with `aria` accessibility attributes (`aria-expanded`, `aria-hidden`), close-on-click, click-outside, and `Escape` key controls.
-- **About Link Routing**: Points directly to `index.html#about`.
-
-### 2. Hero Banner
-- Clean banner structure using HTML `<img>` rendering with centered overlay showing Furniro branding and page breadcrumbs (`Home > Blog`).
-
-### 3. Blog Main Feed
-- Display of main blog posts with metadata (author, date, tag), image container, title, excerpt, and "Read more" links.
-- Consistent image ratios using `object-fit: cover`.
-
-### 4. Interactive Sidebar
-- **Live Search**: Instant JavaScript filtering that filters blog post cards by title in real-time. Displays a *"No posts found"* message when no titles match the query.
-- **Categories Widget**: Itemized topic list with post counter badges.
-- **Recent Posts Widget**: Compact thumbnail listings using standard HTML `<img>` elements.
-
-### 5. Pagination & Features
-- Interactive pagination state toggles.
-- Standard Furniro beige value-proposition bar (`High Quality`, `Warranty Protection`, `Free Shipping`, `24 / 7 Support`).
-
-### 6. Global Footer & Newsletter Validation
-- Multi-column footer layout matching Furniro design standards.
-- Basic client-side JavaScript regex email validation with dynamic success/error feedback.
-
----
-
-## 📂 Project Structure
+## 📂 File Directory
 
 ```text
-furniro-blog/
+furniro/
 │
-├── images/
-│   ├── logo.png
-│   ├── blog-banner.jpg
-│   ├── blog-1.jpg
-│   ├── blog-2.jpg
-│   └── blog-3.jpg
+├── images/               # Media assets & product images folder
 │
-├── blog.html      # Main HTML file for the Blog page
-├── style.css      # Custom styling & responsive media queries
-├── script.js     # Vanilla JavaScript functionality
-└── README.md      # Project documentation
+├── index.html            # Home Page
+│
+├── shop.html             # Shop Catalog Page
+├── shop.css
+├── shop.js
+│
+├── product-detail.html   # Single Product Detail Page
+├── product-detail.css
+├── product-detail.js
+│
+├── comparison.html       # Product Comparison Page
+├── comparison.css
+├── comparison.js
+│
+├── blog.html             # Blog Page
+├── blog.js
+├── style.css
+│
+├── cart.html             # Shopping Cart Page
+├── cart.css
+├── cart.js
+│
+├── cart-drawer.html      # Reusable Cart Drawer Component
+├── cart-drawer.css
+├── cart-drawer.js
+│
+├── checkout.html         # Checkout Page
+├── checkout.css
+├── checkout.js
+│
+├── contact.html          # Contact Us Page
+├── contact.css
+└── contact.js
