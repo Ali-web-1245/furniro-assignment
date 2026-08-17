@@ -19,6 +19,7 @@
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   --font-main: 'Poppins', sans-serif;
   --font-heading: 'Montserrat', sans-serif;
+  --header-height: 72px;
 }
 
 /* ==========================================
@@ -269,25 +270,33 @@ button {
    ========================================== */
 .hero {
   position: relative;
-  min-height: calc(100vh - 72px);
+  min-height: calc(100vh - var(--header-height));
   display: flex;
   align-items: center;
   background-color: var(--bg-light);
   overflow: hidden;
 }
 
+/* background image wrapper: fills the section on all sizes */
 .hero-bg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   z-index: 1;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .hero-container {
   position: relative;
   z-index: 2;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
 }
@@ -764,6 +773,15 @@ button {
   .rooms-content {
     max-width: 100%;
   }
+
+  .hero-container {
+    justify-content: center;
+  }
+
+  .hero-card {
+    max-width: 560px;
+    text-align: center;
+  }
 }
 
 @media (max-width: 768px) {
@@ -792,24 +810,21 @@ button {
     gap: 20px;
   }
 
+  /* Hero: fixed viewport-relative height so background + card
+     both stay visible and proportional on small screens */
   .hero {
-    min-height: auto;
-    padding: 32px 0;
-  }
-
-  .hero-bg {
-    position: relative;
-    height: 280px;
+    min-height: 70vh;
+    align-items: flex-end;
+    padding-bottom: 32px;
   }
 
   .hero-container {
     justify-content: center;
-    margin-top: -50px;
   }
 
   .hero-card {
     margin: 0 16px;
-    max-width: none;
+    max-width: 480px;
   }
 
   .gallery-column {
@@ -818,6 +833,24 @@ button {
 }
 
 @media (max-width: 480px) {
+  .hero {
+    min-height: 60vh;
+    padding-bottom: 24px;
+  }
+
+  .hero-card {
+    margin: 0 12px;
+    padding: 20px;
+  }
+
+  .hero-title {
+    margin-bottom: 12px;
+  }
+
+  .hero-desc {
+    margin-bottom: 20px;
+  }
+
   .products-grid {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 12px;
@@ -836,6 +869,16 @@ button {
     width: 36px;
     height: 36px;
     font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero {
+    min-height: 50vh;
+  }
+
+  .hero-card {
+    padding: 16px;
   }
 }
 
